@@ -53,8 +53,8 @@ func lexical2() {
 	var wg sync.WaitGroup
 	wg.Add(2)
 	data := []byte("golang")
-	go printData(&wg, data[:3])
-	go printData(&wg, data[3:])
+	go printData(&wg, data[:3]) // pass in a slice containing the first 3 bytes
+	go printData(&wg, data[3:]) // pass in the slice containing the last 3 bytes
 
 	wg.Wait()
 
