@@ -13,6 +13,7 @@ import (
 // when it wants to cancel the child goroutine.
 // receiving case
 func nonleak() {
+
 	doWork := func(done <-chan interface{}, strings <-chan string) <-chan interface{} { // 1) pass done chan, as convention, first parameter
 		terminated := make(chan interface{})
 		go func() {
